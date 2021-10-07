@@ -1,0 +1,18 @@
+﻿@inject ConverterPresenter _converterPresenter
+
+<h3>ConvertComponent</h3>
+
+<div>
+<label class="col-form-label">Text To Convert</label>
+<input class="text-body" type="text" @bind="_converterPresenter.SomeText">    
+</div>
+
+<div>
+    <label class="col-form-label">History</label>
+    <HistoryTableWidget Items="_converterPresenter.History"></HistoryTableWidget>
+</div>
+
+<button class="btn btn-primary" @onclick="@(() => _converterPresenter.ConvertTextCommand.Execute(true))">Convert</button>
+
+@code {
+}
